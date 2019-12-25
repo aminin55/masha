@@ -5,9 +5,13 @@ using namespace std;
 
 int main()
 {
+    int n = 0;
+    cin >> n;
     int glob_cnt=0;
     bool deleted=true;
-    vector<int> nums={1,2,2,3,3,3,3,2,1,1,4};
+    vector<int> nums(n);
+    for(int j = 0; j<n; j++)
+        cin << nums[j];
     while(deleted){
             deleted=false;
         for (int i=0;i<(int)nums.size()-2;i++){
@@ -17,7 +21,6 @@ int main()
                 while(nums[i]==nums[counter+i]){
                 counter++;
                 }
-            cout<< counter<< endl;
             nums.erase(nums.begin()+start,nums.begin()+counter+start);
             deleted=true;
             glob_cnt+=counter;
